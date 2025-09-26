@@ -1,16 +1,33 @@
-variables = [
-    10,                    # int целое число
-    3.14,                  # float число с плавающей точкой
-    "Привет",              # str строка
-    True,                  # bool логический тип 
-    [1, 2, 3],             # list список, изменяемая последовательность
-    (4, 5, 6),             # tuple кортеж, неизменяемая последовательность
-    {7, 8, 9},             # set множество уникальных элементов, неупорядоченное
-    {"ключ": "значение"}   # dict словарь, коллекция пар "ключ-значение"
-]
-# создание стека
-m = []  # создаём пустой список, используемый как стек
-m.append('a')  # добавляем элемент 'a' в стек
-m.append('b')  # добавляем элемент 'b' в стек
-m.append('c')  # добавляем элемент 'c' в стек
-print(m)       # выводим содержимое стека
+#Двоичная куча (Binary Heap)
+import heapq
+
+heap = [20, 15, 10]
+heapq.heapify(heap)        # Создать min-кучу
+heapq.heappush(heap, 5)    # Вставить элемент
+min_elem = heapq.heappop(heap)  # Удалить минимум
+print(min_elem, heap)
+
+
+#Биномиальная куча (Binomial Heap)
+class BinomialNode:
+    def __init__(self, key):
+        self.key = key
+        self.children = []
+        self.degree = 0
+
+#Фибоначчиева куча (Fibonacci Heap)
+class FibNode:
+    def __init__(self, key):
+        self.key = key
+        self.children = []
+        self.degree = 0
+        self.parent = None
+        self.marked = False
+
+
+# Хеш-таблицы в Python
+
+hash_map = {"apple": 1, "banana": 2}
+hash_map["orange"] = 3  # вставка
+print(hash_map["banana"])  # поиск
+del hash_map["apple"]    # удаление
